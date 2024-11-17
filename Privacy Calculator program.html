@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{align-items: center; transition: all 1s; background-color: antiquewhite;}
+        #calculator{max-width: 500px; background-color: hsl(0,0%,25%); overflow: hidden; border-radius: 20px;box-shadow: 3px 4px 15px black; }
+        #display{text-shadow: 1px 2px 4px black,3px 3px 15px black;height: 6rem; width: 100%; border: none; background-color: hsl(0,0%,15%); font-size: 40px; color: white;}
+        #key{display: grid; grid-template-columns: repeat(4,1fr); gap: 10px;}
+        button{height: 100px; width: 100px; border-radius: 50%; font-size: 40px; font-weight: bold; cursor: pointer; background-color: hsl(0,0%,40%); margin: 5px;}
+        #operator{background-color: yellow;}
+        button:hover{background-color: hsl(0,0%,30%); box-shadow: 3px 4px 15px black;}
+        #operator:hover{box-shadow: 3px 4px 15px black;}
+        h1{color: aliceblue; text-shadow: 1px 2px 4px black,3px 3px 15px black;}
+        h2{color: aliceblue;}
+    </style>
+</head>
+<body>
+    <div id="calculator" style="margin-left: 200px;">
+        <input readonly id="display">
+        <div id="key">
+            <button onclick="appendToDisplay('+')" id="operator">+</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('-')"id="operator">-</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('*')" id="operator">*</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('/')" id="operator">/</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="clear()" id="operator">C</button>
+            <h2>made By:</h2><h1>Bhushan <br>pas:1000</h1>
+        </div>
+    </div>
+    <script>
+      const display = document.getElementById("display");
+
+      function appendToDisplay(ip){
+        display.value += ip;
+      }
+      function calculate(){
+        try{
+            display.value = eval(display.value);
+        }
+        catch (error){
+            display.value = "Error";
+        }
+        if (display.value == "1000"){
+            window.location.href="file:///C:/Users/bhaskar/bhushan.html/photoresize.html";
+        }
+     }
+     function clear()
+     {
+        display.value = "0";
+     }
+
+    </script>
+</body>
+</html>
